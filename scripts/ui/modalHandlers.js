@@ -3,6 +3,7 @@ import {
   saveTasksToLocalStorage,
 } from "../utils/localStorage.js";
 import { clearExistingTasks, renderTasks } from "./render.js";
+import { createTask } from "../tasks/taskManager.js";
 
 /**
  * Handles the closing of a modal for task details
@@ -44,12 +45,7 @@ export function setupNewTaskModalHandler() {
 
     const tasks = loadTasksFromStorage();
 
-    const newTask = {
-      id: Date.now(),
-      title,
-      description,
-      status,
-    };
+    const newTask = createTask(title, description, status);
 
     tasks.push(newTask);
 
