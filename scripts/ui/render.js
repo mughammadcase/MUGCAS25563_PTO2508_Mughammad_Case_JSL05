@@ -25,6 +25,9 @@ export function renderTasks(tasks) {
 
     const filteredTasks = tasks.filter((task) => task.status === status);
 
+    const header = column.querySelector(".columnHeader");
+    header.textContent = `${status.toUpperCase()} (${filteredTasks.length})`;
+
     filteredTasks.forEach((task) => {
       const taskElement = createTaskElement(task);
       container.appendChild(taskElement);
