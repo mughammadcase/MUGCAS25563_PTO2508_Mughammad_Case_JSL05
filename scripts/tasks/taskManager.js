@@ -1,21 +1,14 @@
-/****
- * Creates a new task object with an incrementing id
+/**
+ * Creates a new task with incremental ID
+ * @param {Array} tasks
  * @param {string} title
  * @param {string} description
  * @param {string} status
- * @param {Array} tasks - existing tasks
- * @returns {Object} new task
+ * @returns {Object}
  */
-export function createTask(title, description, status, tasks) {
-  let nextId = 1;
-
-  if (tasks.length > 0) {
-    const ids = tasks.map((task) => task.id);
-    nextId = Math.max(...ids) + 1;
-  }
-
+export function createTask(tasks, title, description, status) {
   return {
-    id: nextId,
+    id: tasks.length + 1,
     title,
     description,
     status,

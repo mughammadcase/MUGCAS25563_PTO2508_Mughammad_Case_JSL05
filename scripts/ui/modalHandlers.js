@@ -45,7 +45,7 @@ export function setupNewTaskModalHandler() {
 
     const tasks = loadTasksFromStorage();
 
-    const newTask = createTask(title, description, status);
+    const newTask = createTask(tasks, title, description, status);
 
     tasks.push(newTask);
 
