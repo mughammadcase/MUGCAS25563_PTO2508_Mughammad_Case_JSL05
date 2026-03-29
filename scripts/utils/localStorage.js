@@ -5,7 +5,7 @@ import { initialTasks } from "../../initialData.js";
  * If no tasks are found, fall back to initialTasks and save to localStorage.
  * @returns {Array} Array of tasks from localStorage/initialTasks
  */
-export function loadTasksFromLocalStorage() {
+export function loadTasksFromStorage() {
   const stored = localStorage.getItem("tasks");
 
   if (stored)
